@@ -5,6 +5,8 @@ import org.craftedsw.tripservicekata.user.User;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TripServiceShould {
@@ -22,7 +24,7 @@ public class TripServiceShould {
         FakeTripService fakeTripService = new FakeTripService();
         fakeTripService.setFakeUser(new User());
 
-
+        assertIterableEquals(new ArrayList<>(), fakeTripService.getTripsByUser(new User()));
     }
 
     class FakeTripService extends TripService {
